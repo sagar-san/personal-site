@@ -59,6 +59,8 @@ The seven original Medium articles have been recreated as Markdown on `sagsan.co
 
 New articles should originate on `sagsan.com` and may then be syndicated to Medium with `sagsan.com` retained as the canonical source.
 
+Pushes to `main` are built and deployed automatically through GitHub Pages. The custom domain is configured in the repository's Pages settings, while DNS remains managed in Porkbun.
+
 ## Stack
 
 - [Hugo](https://gohugo.io/) static site generator
