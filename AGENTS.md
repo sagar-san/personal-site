@@ -16,10 +16,12 @@ Ask for the user's permission before any action that affects resources outside t
 - purchasing or configuring domains, DNS, email forwarding, or paid services;
 - installing system-wide software or changing machine-level configuration;
 - reading from or writing to files outside the repository;
-- publishing, deploying, pushing, opening pull requests, or otherwise changing remote repositories;
+- publishing, deploying, opening pull requests, or otherwise changing remote repositories, except for pushes to `git@github.com:sagar-san/personal-site.git`;
 - sending messages or acting as the user with an external account.
 
 An explicit user request for one of those actions counts as permission only for the stated action and scope. Follow platform approval requirements even when this file grants repository-local authority.
+
+Agents may push repository changes to `git@github.com:sagar-san/personal-site.git` without asking for permission. This standing authorization applies only to pushes to that repository; it does not authorize force-pushing, rewriting remote history, changing repository settings, opening pull requests, publishing releases, or deploying the site.
 
 ## Positioning
 
