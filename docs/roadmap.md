@@ -1,13 +1,14 @@
 # Roadmap
 
-This roadmap tracks the launch of the personal portfolio and blog at [sagsan.com](https://sagsan.com).
+This roadmap tracks the launch of the personal technical blog and public AI lab notebook at [sagsan.com](https://sagsan.com).
 
 ## Strategy
 
 - **Domain:** `sagsan.com` — short, memorable, and professional.
 - **Email:** `sagar@sagsan.com`, forwarded to the owner's Gmail inbox.
-- **Direction:** A raw, distraction-free, text-first indie-web aesthetic.
-- **Stack:** Hugo, Hugo Bear Blog, and GitHub Pages.
+- **Purpose:** Document personal AI, ML, and data experiments while demonstrating the technical and program judgment expected of an exceptional AI TPM.
+- **Direction:** A simple, distraction-free, writing-first indie-web aesthetic—not a conventional résumé or portfolio.
+- **Stack:** Hugo, PaperMod with restrained local overrides, and GitHub Pages.
 - **Ongoing cost:** Approximately $11 per year for the domain. Hosting, SSL, and software are expected to remain free.
 
 ## Phase 1: Domain and email — complete
@@ -19,16 +20,22 @@ This roadmap tracks the launch of the personal portfolio and blog at [sagsan.com
 
 ## Phase 2: Build the site
 
-- [ ] Install Hugo locally.
-- [ ] Scaffold the Hugo site in this repository.
-- [ ] Add the Hugo Bear Blog theme by Jan Raasch.
-- [ ] Configure the site title, canonical URL, navigation, metadata, and theme.
-- [ ] Create a custom bio and résumé landing page.
-- [ ] Add selected project pages.
-- [ ] Write the first blog posts as Markdown files.
-- [ ] Preview the site locally with `hugo server -D`.
+- [x] Install Hugo locally.
+- [x] Scaffold the Hugo site in this repository.
+- [x] Select PaperMod as the site theme.
+- [x] Add PaperMod without modifying vendored theme files.
+- [x] Configure the site title, canonical URL, navigation, metadata, and theme.
+- [x] Configure PaperMod's standard Home Info Mode and chronological article list.
+- [x] Add the Posts section.
+- [x] Add a minimal custom footer.
+- [x] Configure tags, series, RSS, and article metadata.
+- [x] Recreate the image-classification Medium article as Markdown with its original publication date and image.
+- [x] Review the image-classification article for technical consistency, clarity, links, and reproducibility.
+- [x] Recreate and review the remaining six Medium articles.
+- [ ] Establish PMLE, stock-trader, and golf-analysis series when their first articles are ready.
+- [x] Preview the site locally with `hugo server -D`.
 - [ ] Check mobile and desktop layouts, keyboard navigation, links, and contrast.
-- [ ] Run a clean production build with `hugo --minify`.
+- [x] Run a clean production build with `hugo --minify`.
 
 ## Phase 3: Publish with GitHub Pages
 

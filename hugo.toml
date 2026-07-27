@@ -1,0 +1,88 @@
+baseURL = "https://sagsan.com/"
+locale = "en-US"
+title = "Sagar's Notes"
+theme = "PaperMod"
+enableRobotsTXT = true
+enableGitInfo = false
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  tag = "tags"
+  series = "series"
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[params]
+  author = "Sagar Sanghani"
+  description = "Technical experiments and notes on applied AI, machine learning, and data systems."
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  disableScrollToTop = false
+  hideFooter = true
+  hideAuthor = true
+  mainSections = ["writing"]
+  ShowReadingTime = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+  ShowShareButtons = false
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = true
+  displayFullLangName = false
+
+  [params.label]
+    text = "Sagar's Notes"
+
+  [params.homeInfoParams]
+    Title = "About"
+    Content = "I'm Sagar, a program lead who experiments with AI, machine learning, and data. This is where I share what I learn along the way, along with the occasional musing."
+
+  [[params.socialIcons]]
+    name = "github"
+    title = "Sagar on GitHub"
+    url = "https://github.com/sagar-san"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    title = "Sagar on LinkedIn"
+    url = "https://www.linkedin.com/in/sanghani/"
+
+  [[params.socialIcons]]
+    name = "kaggle"
+    title = "Sagar on Kaggle"
+    url = "https://www.kaggle.com/sagsan/code"
+
+  [[params.socialIcons]]
+    name = "medium"
+    title = "Read Sagar on Medium"
+    url = "https://medium.com/@sagsan"
+
+  [[params.socialIcons]]
+    name = "email"
+    title = "Email Sagar"
+    url = "mailto:sagar@sagsan.com"
+
+  [[params.socialIcons]]
+    name = "rss"
+    title = "Subscribe via RSS"
+    url = "/index.xml"
+
+[[menu.main]]
+  identifier = "writing"
+  name = "Posts"
+  url = "/writing/"
+  weight = 10
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
