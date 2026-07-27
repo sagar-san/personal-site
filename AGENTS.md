@@ -38,49 +38,19 @@ The résumé and LinkedIn establish formal TPM experience. Do not force confiden
 
 ## Content strategy
 
-Content falls loosely into three types:
+Use three loose content types:
 
 - **Experiments:** Bounded questions with implementation details and measurable results.
 - **Systems:** Larger builds that may span architecture, evaluation, operations, and retrospectives.
 - **Notes:** Short technical observations, lessons, or musings.
 
-Existing personal-project articles include:
-
-- Forecasting in SQL: Building an Air Quality Model in BigQuery
-- Mapping r/conspiracy via Vertex AI & BigQuery ML
-- Iterating ML Models Using Weights & Biases
-- Beyond Keywords: Unlock Smarter AI with Semantic Search
-- AI Powered Small-Business ChatBot
-- Building Snoop-Speare
-- High-Performance Image Classification with PyTorch and Hugging Face
-
-Expected future flagship series include PMLE, an algorithmic stock-trading system, and computer-vision golf analysis. Treat these as opportunities to show technical implementation and AI TPM judgment, not as product marketing.
+Treat flagship work such as PMLE, algorithmic stock trading, and computer-vision golf analysis as evidence of technical implementation and AI TPM judgment, not as product marketing.
 
 ## Article standards
 
-Substantial articles should serve two reading depths:
+Before drafting, editing, or reviewing any article, read and follow the repository's [article review skill](docs/article-review/SKILL.md). This includes structural reviews, technical reviews, copyedits, rewrites, migrations, and pre-publication checks.
 
-1. Open with a concise explanation of the problem, why it matters, what was built, the result, and the most important decision.
-2. Follow with enough architecture, implementation, evaluation, tradeoff, and failure detail for a technical reader to inspect the work.
-
-Where appropriate, include:
-
-- the question or hypothesis;
-- success criteria and primary metrics;
-- scope and constraints;
-- architecture and important dependencies;
-- alternatives considered and decisions made;
-- implementation details and reproducible artifacts;
-- results separated from interpretation;
-- limitations, risks, and failure modes;
-- what changed during the work;
-- next steps or what would be required for production.
-
-Prefer specific evidence over generic claims. Link code, notebooks, datasets, demos, diagrams, or result plots when they materially support the article. Never invent a result, metric, artifact, decision, or personal experience. Mark estimates and inference clearly.
-
-Preserve Sagar's conversational voice during editing. Improve structure, clarity, grammar, and technical precision without turning articles into corporate prose. Reconcile conflicting numbers and terminology before publication. Avoid exaggerated titles or conclusions that the evidence does not support.
-
-For financial experiments, state clearly that the material documents a personal project and is not financial advice. For all projects, avoid exposing secrets, credentials, private infrastructure, personal data, or sensitive operational details.
+The intended audience is technical leaders who are not necessarily AI or ML specialists. Keep the writing calm, specific, and evidence-led. Preserve Sagar's voice, never invent facts or experiences, and do not use hype, excitable language, generic AI prose, or corporate filler.
 
 ## Medium migration
 

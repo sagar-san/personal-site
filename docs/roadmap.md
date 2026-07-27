@@ -32,6 +32,7 @@ This roadmap tracks the launch of the personal technical blog and public AI lab 
 - [x] Recreate the image-classification Medium article as Markdown with its original publication date and image.
 - [x] Review the image-classification article for technical consistency, clarity, links, and reproducibility.
 - [x] Recreate and review the remaining six Medium articles.
+- [x] Document the audience, voice, evidence, and review workflow in a repository-local article review skill.
 - [ ] Establish PMLE, stock-trader, and golf-analysis series when their first articles are ready.
 - [x] Preview the site locally with `hugo server -D`.
 - [ ] Check mobile and desktop layouts, keyboard navigation, links, and contrast.
@@ -54,5 +55,5 @@ This roadmap tracks the launch of the personal technical blog and public AI lab 
 - [ ] Add an RSS feed and make it easy to discover.
 - [ ] Add a simple `robots.txt` and sitemap.
 - [ ] Add social sharing metadata and a small site icon.
-- [ ] Document the writing and publishing workflow.
+- [ ] Document the publishing workflow.
 - [ ] Add lightweight build checks for links and generated output.

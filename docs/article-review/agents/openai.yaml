@@ -1,0 +1,4 @@
+interface:
+  display_name: "Article Review"
+  short_description: "Review technical articles with restraint"
+  default_prompt: "Use $article-review to review this technical article for clarity, evidence, and tone."

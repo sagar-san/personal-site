@@ -22,7 +22,7 @@ The site is an edited lab notebook for applied AI—not generic thought leadersh
 - **Systems:** Larger, multi-part builds covering architecture, evaluation, operations, and iteration.
 - **Notes:** Shorter technical observations, lessons, and occasional musings.
 
-Substantial articles should work at two levels. A concise opening should explain the problem, result, and important decision to a broad technical or executive reader. The rest should give engineers enough implementation detail to inspect the reasoning.
+The primary audience is technical leaders who understand software, data, systems, products, and delivery but are not necessarily AI or ML specialists. Substantial articles should work at two levels: a concise opening should explain the problem, result, and important decision, while the rest gives engineers enough implementation detail to inspect the reasoning. The prose should be calm, specific, and evidence-led, without hype or generic AI-written filler. The repository's [article review skill](docs/article-review/SKILL.md) defines the drafting and review standards.
 
 ## Content
 
