@@ -1,62 +1,77 @@
-# How I passed the Google Cloud Professional Machine Learning Engineer (PMLE) Exam in 2 months
+---
+title: "How to Pass the Updated Google Cloud Professional Machine Learning Engineer (PMLE) Exam"
+date: 2026-08-20T00:00:00-07:00
+description: "What I studied during 30 hours spread over two months, why hands-on practice mattered, and how stale practice questions led me to build Quiz Trail."
+summary: "What I studied during 30 hours spread over two months, why hands-on practice mattered, and how stale practice questions led me to build Quiz Trail."
+tags: ["google-cloud", "machine-learning", "certification", "pmle"]
+draft: false
+showToc: true
+TocOpen: false
+---
 
-The GCP PMLE tests your knowledge on practical scenarios around solving data science and ML problems using Google Cloud services. While I did have experience building models, I find structured learning helps me understand concepts much better.
+![Google Cloud Professional Machine Learning Engineer certification badge](assets/credly.png)
 
-I passed the recently updated (June 2026) version of the exam. This is a professional level exam so considered **hard** by Google. It requires an understanding of ML concepts, parsing business use cases, and applying a solution (generally) using Google services
+Last week I passed the Google Cloud Professional Machine Learning Engineer exam on my first attempt after preparing for about 30 hours over two months.
 
-Check out this sample question:
+I already had experience with Google Cloud and ML. I decided to take the exam because I was working on AI/ML projects, and structured learning helps me understand concepts better.
 
-> You recently developed a custom ML model that was trained in Agent Platform on a post-processed training dataset stored in BigQuery. You used a Cloud Run container to deploy the prediction service. The service performs feature lookup and preprocessing and sends a prediction request to a model endpoint.
->
-> You want to configure a comprehensive monitoring solution for **training-serving skew** that requires **minimal maintenance**. What should you do?
+Google updated the exam in June 2026 to reflect the transition from Vertex AI to Gemini Enterprise Agent Platform, changes to its data and analytics stack, and a preference for cloud-native solutions. The [exam page](https://cloud.google.com/learn/certification/machine-learning-engineer) has the current details.
 
-> **A.** Create a Model Monitoring job using the BigQuery training data for training-serving skew detection, send email alerts, and diagnose the issue when an alert is received.
+It is a professional-level exam, and I found it hard. The questions test whether you can understand an ML problem, work through the business and technical constraints, and choose an appropriate solution.
 
-> **B.** Enable request-response logging, build a dashboard comparing training and serving data, and send a daily email report.
+Here is the kind of question you have to work through:
 
-> **C.** Create a Model Monitoring job for skew, send alerts through Cloud Logging, and have a Cloud Run function automatically initiate retraining whenever an alert occurs.
+> A model was trained on data in BigQuery and is now serving predictions from an endpoint. Labels arrive 30 days later, but production traffic now includes far more customers from a cohort that was underrepresented in the training data. What should you do first?
 
-> **D.** Build your own daily Dataflow + TensorFlow Data Validation solution and automatically retrain when skew is detected.
+This requires an understanding of data drift, BigQuery, endpoints, and model monitoring.
 
-This requires knowledge of how training works, what drift is and multiple GCP services. The answer is A if you are curious.
+## Recommended study guide
 
-### A practical approach to passing the PMLE :
+- Do the hands-on work, such as the [Google Skills PMLE learning path](https://www.skills.google/paths/17) and its labs. I spent about half my time on these. The labs are practical and very relevant to the exam. You get 35 free credits each month, which I quickly ran out of, so I spent $29 to cover the remaining labs. The Google Skills path was the best money I spent.
+- Another thing that helped was actually implementing things in GCP. Pipeline questions were giving me a lot of trouble, so I went in and built an end-to-end training, serving, and monitoring pipeline. This made all the pieces click much better.
+- Read the docs when you get stuck, including BigQuery, model endpoints, Feature Store, Model Monitoring, and pipelines. Obviously, you don't need to read every page, but make sure to cover the introductions and understand the benefits and limitations of all the major services. Google Cloud services change extremely quickly, and the docs are the best way to get the latest information.
 
-1) Do the [Google Skills](https://www.skills.google/paths/17). This is the easiest and most affordable way to gain familiarity with the AI services such for training, serving, monitoring including building RAG pipelines and agents.
-2) Read the documentation on the primary services such as BigQuery, Endpoints, Feature Store etc.
-3) Do many many quizzes and understand why you are going wrong.
+### Quizzes, quizzes, and more quizzes
 
-The challenge is that AI offerings change constantly so for example the [official book](https://www.oreilly.com/library/view/official-google-cloud/9781119944461/) as of this writing, is completely out of date. Focus on the practical aspects as that gives you the best chance of passing. I did way too many online quizzes and honestly did not find an up to date one for the new exam. So I just built my own at [https://quiz-trail.web.app/](https://quiz-trail.web.app/). This is availaible for free.
+I did way too many online quizzes. The score was not really the useful part. The useful part was figuring out why my answer was wrong and why another option fit the scenario better.
 
-![](./assets/quiz-trail2.png)
+I couldn't find a question bank that worked the way I wanted, so I built my own: [Quiz Trail](https://quiz-trail.web.app/). It is free to use.
 
-This contains a question bank updated manually with AI assist. The one feature I was missing from other engines was a simply 'copy everything in a nice prompt' so I can ask my favourite LLM about this question.
+![Quiz Trail showing an answer explanation, documentation link, and Copy AI prompt option](assets/quiz-trail2.png)
 
-Summary of sources I used is
+Quiz Trail has 407 public practice questions collected from GitHub repositories. I cleaned them up manually with help from AI. They are not questions from my exam, and Google Cloud services change quickly, so I would still treat the linked Google documentation as the source of truth.
 
+The feature I really wanted was a simple **Copy AI prompt** button. It copies everything—the question and the answer choices—into a clean prompt so I can ask my favourite LLM to explain it. That is much nicer than copying each part by hand or working with screenshots when a provider blocks copy/paste. It also has the basics, such as breaking down your performance by exam section or difficulty.
 
-| Item               | Recommendation              | 
-| ------------------ | --------------------------- | 
-| Official PMLE Book | Skip, its out of date |  
-| [Google Skills](https://www.skills.google/paths/17)  | Best money spent, highly recommended|   
-| [ML Guide](https://developers.google.com/machine-learning) | Recommend, especially if you are new to ML |
-| Skillcert | Skip the questions are not realistic |
-| Whizlabs | Add this if you have time, but low priority|
-| [Offical Docs](https://docs.cloud.google.com/gemini-enterprise-agent-platform) | Highly recommended
-| [gcp-pmle-quiz](https://github.com/AndyTheFactory/gcp-pmle-quiz) | Huge free resource of questions, there are many good ones here but its a bit out of date|
-| [Quiz-Trail](https://quiz-trail.web.app) | Free updated (and shameless self plug) |
+## The resources I used
 
-### Whats happens in the exam :
+| Item                                                                                                                           | My recommendation                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| Official PMLE book                                                                                                             | Skip it for this version. It is too far behind the current platform and exam.       |
+| [Google Skills PMLE path](https://www.skills.google/paths/17)                                                                  | Best money I spent. The practical labs were the most useful part of my preparation. |
+| [Google Machine Learning guide](https://developers.google.com/machine-learning)                                                | Recommended, especially if you are new to ML.                                       |
+| Skillcert                                                                                                                      | Skip it. The questions felt like flashcards instead of scenarios.                   |
+| Whizlabs                                                                                                                       | Add it if you have time, but keep it low priority.                                  |
+| [Official exam guide](https://cloud.google.com/learn/certification/guides/machine-learning-engineer) and product documentation | Highly recommended. Use these when other material conflicts.                        |
+| [gcp-pmle-quiz](https://github.com/AndyTheFactory/gcp-pmle-quiz)                                                               | A huge free collection with a lot of good questions, although some are out of date. |
+| [Quiz Trail](https://quiz-trail.web.app/)                                                                                      | Free, updated, and a shameless self-plug.                                           |
 
-The [official guide](https://cloud.google.com/learn/certification/machine-learning-engineer) contains the actual details of what is covered. In my experience, every question I got was single choice. Every question was a real scenario where you have to work through the constraints to get to the correct answer. There are a total 50 questions. Google does not give you details beyond just telling you if you passed. I'm pretty sure I got ~35 of them on the first try. ~10 were hard where I was mostly sure but a secondary answer looked good too, and for 3-4 I had literally no idea what was going on. 
+## What the exam was actually like
 
-I did the exam in person, and I found I had plenty of time to go through every question in detail. The one issue was the if you need a break, your timer doesnt stop but I was done with about 10 minutes to spare.
+My exam had 50 questions, and every one had a single answer. Every question gave me a scenario with several constraints to work through. Google does not provide a score or tell you which areas you did well in. You just get a pass or fail.
 
+My completely unscientific diagnosis is that I felt good about around 35 questions. Another 10 were hard, usually because there was a great second option. For about three, I had literally no idea what was going on :).
 
-### Tips
-* I got 0 questions that required reading code
-* Again 0 question on Tensorflow (except one indirect on on attaching a preprocessing graph during serving)
-* Some of the questions around picking the right hardware (GPU, TPU, Workbench env) were especially hard for me. 
-* There were a number of Agentic AI questions but frankly they were pretty straightforward. Make sure you understand the basics of creating agents, RAG, Vector DBs etc. 
+I took the exam in person at a Pearson testing center and had plenty of time to read every question carefully. The weird part was that the timer does not stop if you need a break. I did not take one and finished with about 10 minutes left.
 
-Hope that helps someone and good luck. 
+## Odds and Ends
+
+- I got zero questions that required reading code. Google also says the exam does not directly assess coding skill, although you should be able to understand Python or SQL snippets.
+- I got zero direct TensorFlow questions. I only had one indirect question about using a preprocessing graph during serving.
+- Picking the right hardware was especially hard for me. Make sure you understand when to use CPUs, GPUs, or TPUs, along with the different notebook and Workbench environments.
+- Learn pipelines by actually building one. This was one of my weaker areas until I did the practical work.
+- There were a number of agentic AI questions, but they were pretty straightforward. Make sure you understand the basics of agents, RAG, vector databases, and the newer generative AI services.
+
+That is basically it. Do the practical labs, use quizzes to find the things you don't understand, and keep the official documentation open for review. The exam is a lot more about understanding why an answer fits the scenario than remembering a vague feature or config parameter.
+
+Hope this helps someone, and good luck.
