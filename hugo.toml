@@ -33,12 +33,21 @@ enableGitInfo = false
   ShowRssButtonInSectionTermList = true
   displayFullLangName = false
 
+  [params.assets]
+    favicon = "favicon.svg"
+    favicon16x16 = "favicon-16x16.png"
+    favicon32x32 = "favicon-32x32.png"
+    apple_touch_icon = "apple-touch-icon.png"
+    safari_pinned_tab = "safari-pinned-tab.svg"
+    theme_color = "#2e2e33"
+    msapplication_TileColor = "#2e2e33"
+
   [params.label]
     text = "Sagar's Notes"
 
   [params.homeInfoParams]
     Title = "About"
-    Content = "I'm Sagar, a program lead who experiments with AI, machine learning, and data. This is where I share what I learn along the way, along with the occasional musing."
+    Content = "I'm a program lead, and I use this site to document my experiments with AI and data—and, hopefully, share what I learn along the way."
 
   [[params.socialIcons]]
     name = "github"
