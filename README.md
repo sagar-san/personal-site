@@ -1,5 +1,7 @@
 # sagsan.com
 
+Golf swing analysis Parts 1 and 2 include local MP4 demos using the `video` shortcode, with playback controls, poster images, and no automatic video preload. Part 3 remains a draft.
+
 ## Stack
 
 - [Hugo](https://gohugo.io/) static site generator

@@ -1,0 +1,7 @@
+<figure>
+  <video controls playsinline preload="none" width="1280" height="720" style="width:100%;height:auto" poster="{{ .Get "poster" }}" aria-label="{{ .Get "caption" }}">
+    <source src="{{ .Get "src" }}" type="video/mp4">
+    Your browser does not support embedded video. <a href="{{ .Get "src" }}">Download the video</a>.
+  </video>
+  <figcaption>{{ .Get "caption" }}</figcaption>
+</figure>
