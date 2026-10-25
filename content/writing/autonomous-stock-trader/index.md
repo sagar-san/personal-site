@@ -1,5 +1,5 @@
 ---
-title: "I Built an Autonomous Stock Trader With AI Agents. Then I Gave It $100."
+title: "Building an autonomous stock trader"
 date: 2026-10-25T00:00:00-07:00
 description: "Building an agent-based stock-trading system, connecting it to live execution, and examining what an early loss revealed about the design."
 summary: "Building an agent-based stock-trading system, connecting it to live execution, and examining what an early loss revealed about the design."
@@ -9,7 +9,7 @@ draft: false
 showToc: true
 TocOpen: false
 ---
-I built an agent-based stock trader for the [Kaggle five-day agents course](https://www.kaggle.com/learn-guide/5-day-agents), connected it to Robinhood, and gave it roughly $100. By July 6, 2026, it was down 13%.
+I built an agent-based stock trader for the [Kaggle five-day agents course](https://www.kaggle.com/learn-guide/5-day-agents), connected it to Robinhood, and gave it roughly $100. By July 6, 2026, it was down ~13%. Proving I know nothing about finance. 😅
 
 The system could gather data, analyze news, propose allocations, execute orders, and publish its records. That established an end-to-end workflow, but it did not establish a profitable strategy. The most useful engineering lesson was deciding which decisions to leave to agents and which rules to enforce in Python.
 
@@ -35,13 +35,13 @@ There were a lot of moving pieces. The code came together quickly; figuring out 
 
 The pipeline separates analysis from execution:
 
-| Stage | Responsibility |
-| --- | --- |
-| Market data and screening | Python filters price and technical data before any language-model calls. |
-| News analysis | Gemini scores recent news; the pipeline smooths scores over several days. |
-| Portfolio review | An analyst proposes allocations and a risk advisor reviews them in an ADK loop. |
-| Execution | Deterministic Python checks the proposal and calculates orders, using the Robinhood MCP integration. |
-| Records and dashboard | BigQuery stores metrics, decisions, trades, and snapshots; a separate frontend displays them. |
+| Stage                     | Responsibility                                                                                       |
+| ------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Market data and screening | Python filters price and technical data before any language-model calls.                             |
+| News analysis             | Gemini scores recent news; the pipeline smooths scores over several days.                            |
+| Portfolio review          | An analyst proposes allocations and a risk advisor reviews them in an ADK loop.                      |
+| Execution                 | Deterministic Python checks the proposal and calculates orders, using the Robinhood MCP integration. |
+| Records and dashboard     | BigQuery stores metrics, decisions, trades, and snapshots; a separate frontend displays them.        |
 
 Google's Agent Development Kit (ADK) coordinates the agent loop. Model Context Protocol (MCP) exposes broker operations through a tool interface. Neither framework makes a recommendation financially sound; the execution checks still have to live in code.
 
@@ -59,9 +59,9 @@ The portfolio can hold no more than three positions, usually targeting about 30%
 
 ## AI recommends; Python decides
 
-One Gemini agent acts as a portfolio analyst and proposes target allocations. A second acts as a senior risk advisor. It checks the proposal and can send it back for revision, up to five rounds.
+I found it too risky to rely on system instructions alone for financial trades. The LLM hallucinated, proposed the same trade on successive days, and even recommended selling a stock purchased earlier that day. So I let AI pick the stocks and added Python guardrails before executing trades.
 
-I added the second agent because the first one kept changing its mind between runs. The debate added a review step, but it did not establish that the recommendations were stable or correct. A second language model can misunderstand a rule just as easily as the first.
+I also split the review between two agents. One Gemini agent acts as a portfolio analyst and proposes target allocations. A second acts as a senior risk advisor, checking the proposal and sending it back for revision, up to five rounds. This adds a review step, but a second language model can still misunderstand a rule. The execution checks belong in code.
 
 The current system therefore treats the agents’ output as a recommendation. A deterministic Python policy independently checks the account, ticker allowlist, prices, cash, position limits, holding rules, and final approval before an order can reach Robinhood. The broker operation itself is also handled by regular Python rather than free-form agent behavior.
 
@@ -75,11 +75,11 @@ BigQuery records eight live orders between June 24 and July 1. The first portfol
 
 *Dashboard captured on October 25, 2026, with simulated trades excluded.*
 
-By July 6, the portfolio was down 13%. Three ticker symbols did not provide much diversification when all three were versions of the same concentrated AI bet.
+By July 6, the portfolio was down ~13%. Three ticker symbols did not provide much diversification when all three were versions of the same concentrated AI bet.
 
 A few weeks, three current positions, and a tiny account cannot establish investment performance or isolate the effect of any individual rule. The portfolio's concentration was a clear limitation, but this experiment does not tell me how much of the loss came from stock selection, timing, turnover, or the sentiment model.
 
-## The dashboard makes the experiment inspectable
+## Observability
 
 Every run writes market metrics, recommendations, portfolio snapshots, and trade history to BigQuery. The original frontend used Streamlit to turn those records into the public [portfolio dashboard](https://portfolio-dashboard-412197301452.us-central1.run.app).
 
