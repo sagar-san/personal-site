@@ -69,7 +69,7 @@ The executor also checks settled cash rather than assuming that proceeds from a 
 
 ## The live results are not good
 
-BigQuery records eight live orders between June 24 and July 1. The first portfolio bought MU, DELL, and TSM. Later runs reduced MU, sold DELL and TSM, and bought MRVL and SNDK. The resulting portfolio held MU, MRVL, and SNDK. These early records include sales within a week of purchase; they should not be taken as evidence that the later holding-policy implementation was enforced throughout the experiment.
+BigQuery records eight live orders between June 24 and July 1. The first portfolio bought MU, DELL, and TSM. Later runs reduced MU, sold DELL and TSM, and bought MRVL and SNDK. The resulting portfolio held MU, MRVL, and SNDK.
 
 ![Historical trade log showing buys and sells from June 24 through July 1, 2026.](trade-history.png)
 
