@@ -1,6 +1,6 @@
 ---
 title: "Golf Swing Analysis Pipeline — Part 3: From Model to Application"
-date: 2026-07-27T00:00:00-07:00
+date: 2026-10-15T09:00:00-07:00
 description: "Integrating golf-swing models, biomechanical rules, professional matching, and video rendering into an application."
 summary: "Integrating golf-swing models, biomechanical rules, professional matching, and video rendering into an application."
 tags: ["machine-learning", "computer-vision", "ml-systems", "golf"]
@@ -13,23 +13,31 @@ TocOpen: false
 
 *Working title*
 
+> **Try the live demo:** [Open the Golf Swing Analyzer](https://golf-pro.streamlit.app/) and choose a preset swing to explore the results, or upload your own video.
+
 A notebook can end with a metric. A usable video-analysis pipeline has to keep going.
 
 After building the gatekeeper and milestone model, I wanted the output to be understandable without opening a dataframe. The application validates a phone video, identifies eight milestones, evaluates biomechanical measurements, matches a professional reference, and renders the swings side by side.
 
 The individual steps are easy to describe. Making them behave as one reliable system was not.
 
-> **Figure placeholder 1 — Application overview.** Use a screenshot of the Streamlit results page showing the synchronized user/pro video and biomechanical scorecard. Caption: “The application turns model outputs into a visual comparison that can be inspected frame by frame.”
+![Preset C results showing a side-by-side skeleton overlay with Greg Norman and a biomechanical scorecard.](application-scorecard.png)
+
+*Precomputed results for the face-on `kin-1` demo preset, captured from the deployed application. The comparison video and scorecard make the model outputs visible; this screenshot is not a new upload evaluation.*
 
 ## Building the result around the user
 
-The pipeline begins with inexpensive checks. Videos longer than one minute are rejected before pose extraction, and XGBoost filters non-golf footage. MediaPipe then produces normalized body landmarks, and the BiLSTM selects eight ordered milestones.
+The pipeline begins with inexpensive checks. Videos longer than one minute are rejected before pose extraction. MediaPipe produces body landmarks, which are smoothed and normalized before XGBoost filters non-golf footage. For accepted clips, the BiLSTM selects eight ordered milestones.
 
 The next decisions depend on filming perspective. A face-on swing supports measurements such as lateral hip sway and vertical head movement. A down-the-line swing is better suited to forward spine posture. I built a hybrid camera-view heuristic using shoulder width and depth at Address. Back-testing it across 1,399 preprocessed clips produced 98.1% agreement with the dataset labels.
 
 Once view and handedness are estimated, a rules engine calculates lead-arm flex, spine tilt, knee flex, hip sway, head stability, and heel movement. These are compared with explicit thresholds rather than passed through another opaque model.
 
 The application searches 16 professional reference clips. Matching is intentionally simple: it selects the closest arm-to-torso ratio from the same view. The two timelines are warped between corresponding milestones, so the events align in the rendered video.
+
+![Kinematic charts for the kin-1 preset, comparing spine tilt and hand motion with Greg Norman and marking swing milestones.](application-kinematics.png)
+
+*The same precomputed preset also exposes spine-tilt and hand-motion traces alongside the matched professional reference. These charts help inspect the comparison; they do not establish coaching accuracy.*
 
 > **Figure placeholder 2 — End-to-end pipeline.** Show: upload → validation → pose landmarks → eight milestones → view-specific measurements → professional match → synchronized dashboard and report.
 

@@ -9,11 +9,13 @@ draft: false
 showToc: true
 TocOpen: false
 ---
-I built this project with AI assistance as a way to learn how to make a fast video analyzer. The first problem was turning an ordinary phone video into consistent data and deciding whether it contained a golf swing at all. MediaPipe and XGBoost offered established tools for that first stage.
+I built this project with AI assistance as a way to learn how to make a fast video analyzer. The first problem was turning a low video into consistent data and deciding whether it contained a golf swing at all.
+
+> **Try the live demo:** [Open the Golf Swing Analyzer](https://golf-pro.streamlit.app/) and choose a preset swing to explore the results, or upload your own video.
 
 ## Turning frames into body coordinates
 
-A model cannot reason about concepts such as “the hands moved above the shoulders” until the video is converted into a more useful representation.
+A model cannot reason about concepts such as “the hands moved above the shoulders” until the video is converted into a more useful representation (aka numbers).
 
 I used MediaPipe Pose Landmarker in video mode. For each frame, it estimates 33 body landmarks, including the shoulders, elbows, wrists, hips, knees, and ankles. The result is a time series of body coordinates rather than a stack of raw pixels. I saved these features as CSV files so I could retrain models without running pose extraction again. That made iteration much faster. A four-second clip can now be represented as rows in a table, with one row per frame.
 

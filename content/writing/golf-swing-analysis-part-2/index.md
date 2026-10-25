@@ -11,6 +11,8 @@ TocOpen: false
 ---
 Once the pipeline could recognize a golf video, the difficult part began: locating the eight frames that describe the swing, from address through finish.
 
+> **Try the live demo:** [Open the Golf Swing Analyzer](https://golf-pro.streamlit.app/) and choose a preset swing to explore the results, or upload your own video.
+
 I first tried a multiclass XGBoost model for this task, then moved to a bidirectional LSTM. In the initial experiments, the LSTM located milestones more accurately: mean absolute error fell from 8.41 to 4.65 frames. XGBoost remained useful for the separate golf/non-golf gatekeeper described in Part 1.
 
 A single frame can be ambiguous. A golfer’s body can look similar during the backswing and downswing even though those moments have different meanings. The surrounding frames provide the missing context.
