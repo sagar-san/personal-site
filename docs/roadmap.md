@@ -50,6 +50,10 @@ This roadmap tracks the launch of the personal technical blog and public AI lab 
 - [ ] Wait for GitHub to issue the TLS certificate and enforce HTTPS.
 - [ ] Verify the live site, canonical links, custom domain, and error page.
 
+## Published project retrospectives
+
+- Autonomous stock trader: published October 25, 2026, reconciled with the July 6 Kaggle write-up and author-confirmed July 20 results. Includes the demo and historical trade log.
+
 ## Possible follow-ups
 
 - Golf swing analysis Parts 1 and 2 use publication dates September 1 and September 15, 2026, with local video demos. Part 3 remains a draft dated October 15, 2026, with application screenshots.

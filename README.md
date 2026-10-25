@@ -2,6 +2,8 @@
 
 Golf swing analysis Parts 1 and 2 include local MP4 demos using the `video` shortcode, with playback controls, poster images, and no automatic video preload. Part 3 remains a draft.
 
+The autonomous stock trader retrospective includes a recorded demo, historical trade screenshot, and links to the public dashboard and source code. Live orders stopped in mid-August 2026.
+
 ## Stack
 
 - [Hugo](https://gohugo.io/) static site generator
