@@ -9,13 +9,13 @@ draft: false
 showToc: true
 TocOpen: false
 ---
-I built an agent-based stock trader for the [Kaggle five-day agents course](https://www.kaggle.com/learn-guide/5-day-agents), connected it to Robinhood, and gave it roughly $100. By July 20, 2026, the account was worth $71.94, a loss of about 28%.
+I built an agent-based stock trader for the [Kaggle five-day agents course](https://www.kaggle.com/learn-guide/5-day-agents), connected it to Robinhood, and gave it roughly $100. By July 6, 2026, it was down 13%.
 
 The system could gather data, analyze news, propose allocations, execute orders, and publish its records. That established an end-to-end workflow, but it did not establish a profitable strategy. The most useful engineering lesson was deciding which decisions to leave to agents and which rules to enforce in Python.
 
 *This is a personal engineering experiment, not investment advice. I stopped live orders in mid-August 2026; the dashboard remains online.*
 
-> **Watch the recorded demo:** [Autonomous Stock Trader walkthrough](https://www.youtube.com/watch?v=kQS5lmFw7Vs). The recording shows an earlier dashboard snapshot, not the July 20 results discussed below.
+> **Watch the recorded demo:** [Autonomous Stock Trader walkthrough](https://www.youtube.com/watch?v=kQS5lmFw7Vs).
 
 {{< youtube kQS5lmFw7Vs >}}
 
@@ -69,17 +69,13 @@ The executor also checks settled cash rather than assuming that proceeds from a 
 
 ## The live results are not good
 
-BigQuery records eight live orders between June 24 and July 1. The first portfolio bought MU, DELL, and TSM. Later runs reduced MU, sold DELL and TSM, and bought MRVL and SNDK. By July 20, the account held MU, MRVL, and SNDK. These early records include sales within a week of purchase; they should not be taken as evidence that the later holding-policy implementation was enforced throughout the experiment.
+BigQuery records eight live orders between June 24 and July 1. The first portfolio bought MU, DELL, and TSM. Later runs reduced MU, sold DELL and TSM, and bought MRVL and SNDK. The resulting portfolio held MU, MRVL, and SNDK. These early records include sales within a week of purchase; they should not be taken as evidence that the later holding-policy implementation was enforced throughout the experiment.
 
 ![Historical trade log showing buys and sells from June 24 through July 1, 2026.](trade-history.png)
 
-*Dashboard captured on October 25, 2026, with simulated trades excluded. These are historical execution records, not evidence of the July 20 account valuation.*
+*Dashboard captured on October 25, 2026, with simulated trades excluded.*
 
-My July 20 account figures were $71.94 in total equity, including $11.01 in cash, with $25.74 of unrealized losses. Three ticker symbols did not provide much diversification when all three were versions of the same concentrated AI bet.
-
-These July 20 figures are my confirmed historical records; a retained July dashboard snapshot is not included here for independent reconciliation. Unrealized loss covers open positions and is not the same measure as the change in total account equity.
-
-My [original Kaggle write-up, dated July 6](https://www.kaggle.com/competitions/vibecoding-agents-capstone-project/writeups/new-writeup-1783318790626), reported a 13.1% loss at that earlier point. The recorded demo also shows an earlier balance. Those figures should not be read as the July 20 result.
+By July 6, the portfolio was down 13%. Three ticker symbols did not provide much diversification when all three were versions of the same concentrated AI bet.
 
 A few weeks, three current positions, and a tiny account cannot establish investment performance or isolate the effect of any individual rule. The portfolio's concentration was a clear limitation, but this experiment does not tell me how much of the loss came from stock selection, timing, turnover, or the sentiment model.
 
@@ -93,7 +89,7 @@ You can explore the [live dashboard](https://portfolio-dashboard-412197301452.us
 
 ## What I would do before adding more money
 
-I stopped live orders in mid-August 2026 because I did not have time to monitor them. The [public dashboard](https://portfolio-dashboard-412197301452.us-central1.run.app) has remained online. The July figures above describe the historical experiment; the dashboard may show a different, later snapshot.
+I stopped live orders in mid-August 2026 because I did not have time to monitor them. The [public dashboard](https://portfolio-dashboard-412197301452.us-central1.run.app) has remained online.
 
 The larger gap is backtesting. The full pipeline needs to be replayed against historical data without giving it access to future information, while tracking a realistic simulated account and trading costs. The sentiment layer needs its own evaluation too. Gemini produces a score, but I have not yet proved that the score is consistent or useful.
 

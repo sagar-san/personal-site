@@ -52,7 +52,7 @@ This roadmap tracks the launch of the personal technical blog and public AI lab 
 
 ## Published project retrospectives
 
-- Autonomous stock trader: published October 25, 2026, reconciled with the July 6 Kaggle write-up and author-confirmed July 20 results. Includes the demo and historical trade log.
+- Autonomous stock trader: published October 25, 2026, using the July 6 result of a 13% loss. Includes the demo and historical trade log.
 
 ## Possible follow-ups
 
