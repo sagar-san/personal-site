@@ -19,7 +19,9 @@ A model cannot reason about concepts such as “the hands moved above the should
 
 I used MediaPipe Pose Landmarker in video mode. For each frame, it estimates 33 body landmarks, including the shoulders, elbows, wrists, hips, knees, and ankles. The result is a time series of body coordinates rather than a stack of raw pixels. I saved these features as CSV files so I could retrain models without running pose extraction again. That made iteration much faster. A four-second clip can now be represented as rows in a table, with one row per frame.
 
-{{< video src="swing-analysis.mp4" poster="video-poster.jpg" caption="Example output from the completed pipeline: pose landmarks overlaid on a user swing and a Greg Norman reference. The milestone labels and measurements come from later stages of the pipeline." >}}
+{{< youtube coD5eBGOvkY >}}
+
+*Example output from the completed pipeline: pose landmarks overlaid on a user swing and a Greg Norman reference. The milestone labels and measurements come from later stages of the pipeline.*
 
 Pose estimates can jitter, and a joint may disappear briefly during fast motion. I interpolate short gaps, smooth the tracks, center the body around the hips, and scale the coordinates using torso length. The model should respond to a swing pattern, not the golfer’s distance from the camera.
 

@@ -56,7 +56,7 @@ This roadmap tracks the launch of the personal technical blog and public AI lab 
 
 ## Possible follow-ups
 
-- Golf swing analysis Parts 1 and 2 use publication dates September 1 and September 15, 2026, with local video demos. Part 3 remains a draft dated October 15, 2026, with application screenshots.
+- Golf swing analysis Parts 1 and 2 use publication dates September 1 and September 15, 2026, with embedded YouTube demos. Part 3 remains a draft dated October 15, 2026, with application screenshots.
 
 - [ ] Add an RSS feed and make it easy to discover.
 - [ ] Add a simple `robots.txt` and sitemap.

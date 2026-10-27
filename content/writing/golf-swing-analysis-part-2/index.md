@@ -25,7 +25,9 @@ I used a bidirectional long short-term memory network, or BiLSTM. It processes t
 
 The model assigns every frame a probability for nine classes: eight milestone classes and one transition class. The milestones are Address, Toe-Up, Mid-Backswing, Top of Backswing, Mid-Downswing, Impact, Mid-Follow-Through, and Finish.
 
-{{< video src="swing-analysis.mp4" poster="video-poster.jpg" caption="Example output from the completed pipeline: a user swing aligned with a Sandra Gal reference using the detected milestones. The video illustrates the output, rather than measuring prediction accuracy." >}}
+{{< youtube OAuj_g5Eek0 >}}
+
+*Example output from the completed pipeline: a user swing aligned with a Sandra Gal reference using the detected milestones. The video illustrates the output, rather than measuring prediction accuracy.*
 
 The lower frame error made the BiLSTM the better milestone detector in these experiments, but it did not guarantee a valid sequence of events.
 
