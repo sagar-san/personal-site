@@ -13,7 +13,7 @@ The autonomous stock trader retrospective includes a recorded demo, historical t
 
 The homepage social links are ordered email, LinkedIn, Kaggle, GitHub, Medium, then RSS. A scoped override in `assets/css/extended/home.css` removes the introduction’s minimum height and reduces the gap before the posts.
 
-Article lists use compact, uncropped previews from page-bundle cover images, styled in `assets/css/extended/list-covers.css`. Golf Parts 1 and 2 use their demo stills; the stock trader uses its trade log; image classification uses its existing Fashion-MNIST cover. New covers are hidden on individual articles to avoid duplicating their media.
+Article lists use compact, uncropped previews from page-bundle cover images, styled in `assets/css/extended/list-covers.css`. Golf Parts 1 and 2 use their demo stills; the stock trader uses its trade log; image classification uses its existing Fashion-MNIST cover. Snoop-Speare uses its original animated GIF, and the chatbot uses its Orchid Bot screenshot. New covers are hidden on individual articles to avoid duplicating their media.
 
 ## Local development
 

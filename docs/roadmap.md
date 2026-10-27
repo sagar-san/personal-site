@@ -27,7 +27,7 @@ This roadmap tracks the launch of the personal technical blog and public AI lab 
 - [x] Configure the site title, canonical URL, navigation, metadata, and theme.
 - [x] Configure PaperMod's standard Home Info Mode and chronological article list.
 - [x] Put email, LinkedIn, and Kaggle first in homepage social links and tighten the introduction spacing.
-- [x] Add compact article-list images for the stock trader, golf Parts 1 and 2, and Fashion-MNIST classification.
+- [x] Add compact article-list images for the stock trader, golf Parts 1 and 2, Fashion-MNIST classification, Snoop-Speare, and the small-business chatbot.
 - [x] Add the Posts section.
 - [x] Add a minimal custom footer.
 - [x] Configure tags, series, RSS, and article metadata.

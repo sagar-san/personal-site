@@ -6,6 +6,12 @@ summary: "Fine-tuning a small language model on Snoop Dogg and Shakespeare to ex
 tags: ["llm", "data-science", "ai"]
 showToc: true
 TocOpen: false
+cover:
+  image: "figure-01.gif"
+  alt: "Animated Snoop Dogg GIF from the Snoop-Speare demo"
+  hiddenInList: false
+  hiddenInSingle: true
+  responsiveImages: false
 ---
 *The causal language model built on the works of Snoop and Shakespeare that no one asked for.*
 

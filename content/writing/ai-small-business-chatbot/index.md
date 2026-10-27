@@ -6,6 +6,11 @@ summary: "Building a retrieval-augmented chatbot for small-business information 
 tags: ["retrieval-augmented-gen", "data-science", "ai"]
 showToc: true
 TocOpen: false
+cover:
+  image: "figure-01.png"
+  alt: "Orchid Bot printing assistant with suggested customer questions"
+  hiddenInList: false
+  hiddenInSingle: true
 ---
 Let’s build a working custom chatbot for a small business. Orchid Enterprises is a print shop in India. They get a large volume of phone calls asking similar questions, and many of the answers already live on their [website](https://orchiddigitals.com/). Let’s make those answers easier for customers to find.
 
