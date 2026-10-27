@@ -1,11 +1,11 @@
 ---
-title: "Building a CIFAR-10 Classifier with Transfer Learning — Part 1"
-date: 2026-08-03T00:00:00-07:00
+title: "Transfer Learning I: Building a CIFAR-10 Classifier"
+date: 2026-07-01T00:00:00-07:00
 description: "Adapting MobileNetV2 to CIFAR-10 in two phases: feature extraction followed by fine-tuning."
-summary: "A two-phase MobileNetV2 transfer-learning experiment that reached a reported 91.1% test accuracy on CIFAR-10."
+summary: "A two-phase MobileNetV2 transfer-learning experiment that reached 91.78% accuracy on a 10,000-image CIFAR-10 evaluation."
 tags: ["machine-learning", "computer-vision", "tensorflow", "transfer-learning", "cifar-10"]
 series: ["cifar-10-classification"]
-draft: true
+draft: false
 showToc: true
 TocOpen: false
 cover:
@@ -13,27 +13,22 @@ cover:
   alt: "Four low-resolution CIFAR-10 images labeled truck, horse, cat, and truck"
   caption: "CIFAR-10 images are only 32×32 pixels, which makes some classes difficult to distinguish."
   relative: true
-  hiddenInList: true
+  hiddenInList: false
   hiddenInSingle: false
 ---
-<!-- EDITORIAL NOTES
-
-Before publication, confirm which evaluation produced the reported 91.1% test accuracy. The supplied 10,000-example confusion matrix contains 9,178 correct predictions (91.78%), so it appears to come from a different checkpoint or evaluation pass.
-
-END EDITORIAL NOTES -->
 
 I wanted to know whether a compact pretrained vision model could clear 90% accuracy on CIFAR-10 without training a network from scratch. I adapted MobileNetV2 in two phases: first training a new classification head while keeping the pretrained backbone frozen, then fine-tuning part of that backbone with a smaller learning rate.
 
-The final model reached a reported **91.1% test accuracy**, with training accuracy around **93%**. The result showed that transfer learning could adapt a relatively small model to low-resolution images, but the error analysis also exposed a persistent weakness: cats were often classified as dogs.
+The saved confusion matrix shows **91.78% accuracy across 10,000 images**, with training accuracy around **93%**. The result showed that transfer learning could adapt a relatively small model to low-resolution images, but the error analysis also exposed a persistent weakness: cats were often classified as dogs.
 
-This is Part 1 of the experiment. [Part 2 compares this hand-built model with Vertex AI AutoML]({{< relref "/writing/you-probably-dont-need-to-build-your-own-model" >}}).
+This is the first part of the experiment. [Transfer Learning II compares this hand-built model with Vertex AI AutoML]({{< relref "/writing/you-probably-dont-need-to-build-your-own-model" >}}).
 
 ## Experiment snapshot
 
 - **Question:** Can MobileNetV2 exceed 90% accuracy on CIFAR-10 through transfer learning?
 - **Dataset:** CIFAR-10, with 60,000 32×32 color images across ten classes.
 - **Approach:** Train a new ten-class output head, then fine-tune the later MobileNetV2 layers.
-- **Reported result:** 91.1% test accuracy, compared with roughly 93% training accuracy.
+- **Result:** 91.78% accuracy in the saved 10,000-image confusion matrix, compared with roughly 93% training accuracy.
 - **Artifact:** [Open the manual-model notebook in Google Colab](https://colab.research.google.com/drive/1C4VTYyMjUNAcOYHCZA_U-xdy1N40rQXi?usp=sharing).
 - **Main limitation:** The experiment used a single model run and did not systematically compare fine-tuning boundaries, augmentation strategies, or alternative architectures.
 
@@ -42,8 +37,6 @@ This is Part 1 of the experiment. [Part 2 compares this hand-built model with Ve
 Deep-learning models can require substantial data and compute when trained from scratch. Transfer learning starts from a model that has already learned useful visual features on a larger dataset and adapts those features to a new task.
 
 MobileNetV2 was a practical starting point because it was designed to balance image-classification accuracy with a small computational footprint. Its ImageNet-trained backbone already recognized general patterns such as edges, textures, and shapes. My task was to replace its original classifier with one that could distinguish CIFAR-10's ten categories: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, and truck.
-
-![Four low-resolution CIFAR-10 samples labeled truck, horse, cat, and truck](cifar-10-samples.png)
 
 The 32×32 source images are challenging even for a person. In the sample above, the cat is not immediately obvious. That low resolution shaped the two-stage training strategy.
 
@@ -117,12 +110,12 @@ The aggregate score met the original goal, but the confusion matrix made the rem
 
 Cats were the weakest class in this evaluation. Of the 1,000 cat images represented in the matrix, 812 were classified correctly and 87 were labeled as dogs. The reverse confusion was also visible: 68 dog images were labeled as cats.
 
-The supplied matrix contains 9,178 correct predictions out of 10,000, or 91.78% accuracy. Because that differs from the reported final test accuracy of 91.1%, the figure likely came from a different checkpoint or evaluation pass. The class-level pattern is still clear, but the two aggregate numbers should not be treated as the same run until that is confirmed.
+The matrix contains 9,178 correct predictions out of 10,000, or 91.78% accuracy. This is separate from the shared 600-image evaluation in Transfer Learning II, which compares F1 scores. Accuracy and F1 measure different things, and the two evaluations should not be treated as the same result.
 
 Data augmentation or a different fine-tuning boundary could improve the cat-versus-dog errors. A stronger follow-up would test those changes across multiple seeds and compare the results against a smaller convolutional baseline.
 
 ## What this established
 
-The feature-extraction phase reached roughly 82% validation accuracy; after fine-tuning, the model reached a reported 91.1% test accuracy. The roughly two-point gap between training and test accuracy did not indicate severe overfitting, but that gap alone is not enough to prove that the model generalizes broadly.
+The feature-extraction phase reached roughly 82% validation accuracy; after fine-tuning, the model reached 91.78% accuracy on a 10,000-image evaluation. This was one model run, and the result alone does not establish how well the model generalizes beyond this dataset.
 
-The more practical question is whether this result justified the engineering work. [Part 2 runs the same classification problem through Vertex AI AutoML and compares the outcome]({{< relref "/writing/you-probably-dont-need-to-build-your-own-model" >}}).
+The more practical question is whether this result justified the engineering work. [Transfer Learning II runs the same classification problem through Vertex AI AutoML and compares the outcome]({{< relref "/writing/you-probably-dont-need-to-build-your-own-model" >}}).

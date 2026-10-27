@@ -16,7 +16,7 @@ cover:
   alt: "A grid of grayscale Fashion-MNIST clothing images and their labels"
   caption: "A sample of the Fashion-MNIST images used for fine-tuning."
   relative: true
-  hiddenInList: true
+  hiddenInList: false
   hiddenInSingle: false
 ---
 

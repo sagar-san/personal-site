@@ -8,6 +8,11 @@ series: ["golf-swing-analysis"]
 draft: false
 showToc: true
 TocOpen: false
+cover:
+  image: "video-poster.jpg"
+  alt: "Golf swing milestone comparison alongside a Sandra Gal reference swing"
+  hiddenInList: false
+  hiddenInSingle: true
 ---
 In [Part 1]({{< relref "golf-swing-analysis-part-1" >}}), I used MediaPipe to extract x and y coordinates for 33 body landmarks in each video frame, then used XGBoost to check whether the clip contained a golf swing.
 

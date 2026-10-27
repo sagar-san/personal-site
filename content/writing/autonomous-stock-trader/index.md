@@ -8,6 +8,11 @@ series: ["autonomous-stock-trader"]
 draft: false
 showToc: true
 TocOpen: false
+cover:
+  image: "trade-history.png"
+  alt: "Stock trader dashboard showing the historical executed trade log"
+  hiddenInList: false
+  hiddenInSingle: true
 ---
 I built an agent-based stock trader for the [Kaggle five-day agents course](https://www.kaggle.com/learn-guide/5-day-agents), connected it to Robinhood, and gave it roughly $100. By July 6, 2026, it was down ~13%. Proving I know nothing about finance. 😅
 

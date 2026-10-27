@@ -8,6 +8,11 @@ series: ["golf-swing-analysis"]
 draft: false
 showToc: true
 TocOpen: false
+cover:
+  image: "video-poster.jpg"
+  alt: "Golf swing pose landmarks alongside a Greg Norman reference swing"
+  hiddenInList: false
+  hiddenInSingle: true
 ---
 I built this project with AI assistance as a way to learn how to make a fast video analyzer. The first problem was turning a low video into consistent data and deciding whether it contained a golf swing at all.
 

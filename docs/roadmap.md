@@ -26,6 +26,8 @@ This roadmap tracks the launch of the personal technical blog and public AI lab 
 - [x] Add PaperMod without modifying vendored theme files.
 - [x] Configure the site title, canonical URL, navigation, metadata, and theme.
 - [x] Configure PaperMod's standard Home Info Mode and chronological article list.
+- [x] Put email, LinkedIn, and Kaggle first in homepage social links and tighten the introduction spacing.
+- [x] Add compact article-list images for the stock trader, golf Parts 1 and 2, and Fashion-MNIST classification.
 - [x] Add the Posts section.
 - [x] Add a minimal custom footer.
 - [x] Configure tags, series, RSS, and article metadata.
@@ -49,6 +51,10 @@ This roadmap tracks the launch of the personal technical blog and public AI lab 
 - [ ] Confirm that DNS resolves to GitHub Pages.
 - [ ] Wait for GitHub to issue the TLS certificate and enforce HTTPS.
 - [ ] Verify the live site, canonical links, custom domain, and error page.
+
+## Publication-ready articles
+
+- Transfer Learning I (July 1, 2026) and II (July 28, 2026): publication dates backdated at the author’s request, titles aligned, cross-links preserved, and draft flags removed locally. Part I reports 91.78% accuracy from its 10,000-image confusion matrix; Part II reports 91.1% F1 on the author-confirmed shared 600-image evaluation. Deployment is pending.
 
 ## Published project retrospectives
 

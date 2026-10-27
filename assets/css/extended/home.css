@@ -1,0 +1,5 @@
+/* Keep the homepage introduction compact without changing post cards. */
+.first-entry.home-info {
+    min-height: unset;
+    margin-bottom: var(--gap);
+}

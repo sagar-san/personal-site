@@ -50,9 +50,9 @@ enableGitInfo = false
     Content = "I'm a program lead, and I use this site to document my experiments with AI and data—and, hopefully, share what I learn along the way."
 
   [[params.socialIcons]]
-    name = "github"
-    title = "Sagar on GitHub"
-    url = "https://github.com/sagar-san"
+    name = "email"
+    title = "Email Sagar"
+    url = "mailto:sagar@sagsan.com"
 
   [[params.socialIcons]]
     name = "linkedin"
@@ -65,14 +65,14 @@ enableGitInfo = false
     url = "https://www.kaggle.com/sagsan/code"
 
   [[params.socialIcons]]
+    name = "github"
+    title = "Sagar on GitHub"
+    url = "https://github.com/sagar-san"
+
+  [[params.socialIcons]]
     name = "medium"
     title = "Read Sagar on Medium"
     url = "https://medium.com/@sagsan"
-
-  [[params.socialIcons]]
-    name = "email"
-    title = "Email Sagar"
-    url = "mailto:sagar@sagsan.com"
 
   [[params.socialIcons]]
     name = "rss"
