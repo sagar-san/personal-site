@@ -62,6 +62,8 @@ This roadmap tracks the launch of the personal technical blog and public AI lab 
 
 ## Possible follow-ups
 
+- Professional Agentic Architect exam preparation: saved as a draft dated November 5, 2026, with the supplied article, certification screenshot, and a Quiz Trail sample question explaining answer D and defense in depth. Before publication, review the technical claims and linked resources, refresh Quiz Trail availability and the date-specific wording, and set the intended publication date.
+
 - Golf swing analysis Parts 1 and 2 use publication dates September 1 and September 15, 2026, with embedded YouTube demos. Part 3 remains a draft dated October 15, 2026, with application screenshots.
 
 - [ ] Add an RSS feed and make it easy to discover.

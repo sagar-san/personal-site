@@ -2,6 +2,8 @@
 
 Golf swing analysis Parts 1 and 2 embed YouTube demos using Hugo’s `youtube` shortcode. Part 3 remains a draft.
 
+The Professional Agentic Architect exam preparation article is saved as a draft in `content/writing/preparing-google-agentic-architect/`, with its certification screenshot and a Quiz Trail sample question with an answer explanation. Preview it with `hugo server -D`; production builds exclude it.
+
 The autonomous stock trader retrospective includes a recorded demo, historical trade screenshot, and links to the public dashboard and source code. Live orders stopped in mid-August 2026.
 
 ## Stack
