@@ -56,13 +56,12 @@ This roadmap tracks the launch of the personal technical blog and public AI lab 
 
 - Transfer Learning I (July 1, 2026) and II (July 28, 2026): publication dates backdated at the author’s request, titles aligned, cross-links preserved, and draft flags removed locally. Part I reports 91.78% accuracy from its 10,000-image confusion matrix; Part II reports 91.1% F1 on the author-confirmed shared 600-image evaluation. Deployment is pending.
 
-## Published project retrospectives
+## Published articles
 
 - Autonomous stock trader: published October 25, 2026, using the July 6 result of a 13% loss. Includes the demo and historical trade log.
+- Professional Agentic Architect exam preparation: published November 5, 2026, with the certification screenshot and a Quiz Trail sample question explaining answer D and defense in depth. Covers the author's completed Google Skills learning path, AI-assisted practice, and a two-to-three-month preparation estimate for readers who already have cloud experience. Includes links to the PMLE article and support page.
 
 ## Possible follow-ups
-
-- Professional Agentic Architect exam preparation: draft dated November 5, 2026, with the certification screenshot and a Quiz Trail sample question explaining answer D and defense in depth. Editorial revision adds section headings, makes the documented preparation process explicit, moves practical advice ahead of Quiz Trail, and replaces the beginner timeline estimate with Google's recommended experience. Awaiting author review. Core technical claims and public resource availability were checked November 5; refresh availability and date-specific wording and set the intended publication date before publishing.
 
 - Golf swing analysis Parts 1 and 2 use publication dates September 1 and September 15, 2026, with embedded YouTube demos. Part 3 remains a draft dated October 15, 2026, with application screenshots.
 
